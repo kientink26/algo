@@ -30,6 +30,13 @@ export default class ArrayList {
     return this.#backingArray[index];
   }
 
+  setAt(index: number, item: number): void {
+    if (index < 0 || index >= this.length) {
+      throw new Error("invalid index");
+    }
+    this.#backingArray[index] = item;
+  }
+
   toString(): string {
     let s = "";
     for (let i = 0; i < this.length; i++) {
